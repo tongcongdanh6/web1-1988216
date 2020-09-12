@@ -14,7 +14,7 @@
 
 <body>
     <!--header-->
-    <header>
+    <header class="container">
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <a class="navbar-brand" href="#">
                 <img src="images/logo.png" alt="Logo">
@@ -54,74 +54,86 @@
     <!--/header-->
 
     <!--banner-->
-    <div>
-        <h4>
-            Tasty cakes and ice-cream<br /> for everyone
-        </h4>
-        <div>
-            <a href="#">see our menu</a>
+    <div class="container-fluid">
+        <div class="container text-center">
+            <h4>
+                Tasty cakes and ice-cream<br /> for everyone
+            </h4>
+            <div>
+                <a href="#">see our menu</a>
+            </div>
+            <ul>
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+            </ul>
         </div>
-        <ul>
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-        </ul>
     </div>
     <!--/banner-->
 
     <!--main-->
-    <div class="row">
-        <div class="col">
-            <img src="images/icon-1.png" alt="">
-            <h4>Coffee</h4>
-            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <a href="#">Read more</a>
-        </div>
-        <div class="col">
-            <img src="images/icon-2.png" alt="">
-            <h4>Drinks</h4>
-            <div>Temporibus quisquam voluptatum atque obcaecati consectetur velit incidunt.</div>
-            <a href="#">Read more</a>
-        </div>
-        <div class="col">
-            <img src="images/icon-3.png" alt="">
-            <h4>Cakes</h4>
-            <div>Asperiores veniam quam nobis nostrum? Nemo, aperiam alias?</div>
-            <a href="#">Read more</a>
-        </div>
-        <div class="col">
-            <img src="images/icon-4.png" alt="">
-            <h4>Ice-cream</h4>
-            <div>Laudantium, consequatur delectus doloribus ab dolor laboriosam? Harum.</div>
-            <a href="#">Read more</a>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="images/icon-1.png" alt="">
+                <h4>Coffee</h4>
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="col text-center">
+                <img src="images/icon-2.png" alt="">
+                <h4>Drinks</h4>
+                <div>Temporibus quisquam voluptatum atque obcaecati consectetur velit incidunt.</div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="col text-center">
+                <img src="images/icon-3.png" alt="">
+                <h4>Cakes</h4>
+                <div>Asperiores veniam quam nobis nostrum? Nemo, aperiam alias?</div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="col text-center">
+                <img src="images/icon-4.png" alt="">
+                <h4>Ice-cream</h4>
+                <div>Laudantium, consequatur delectus doloribus ab dolor laboriosam? Harum.</div>
+                <a href="#">Read more</a>
+            </div>
         </div>
     </div>
     <!--/main-->
 
     <!--About Us-->
-    <div>
-        <div>
-            <h3>
-                About Us
-            </h3>
-            <div>
-                <img src="images/icon-about.png" alt="">
-                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maiores, eaque sed labore, nam
-                    expedita ipsum animi dolorem voluptatem quis minus recusandae aut deleniti architecto tenetur. Totam
-                    eveniet vitae eum?</div>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus sequi facere optio
-                    adipisci quisquam, iusto dolore pariatur harum blanditiis. <a href="#">Read more</a></div>
-            </div>
-        </div>
-        <div>
-            <form action="post">
-                <h3>Newsletter<br />Sign Up</h3>
-                <div>Please, write an e-mail</div>
-                <div>
-                    <input type="text" name="e-mail" id="email">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h3>
+                        About Us
+                    </h3>
+                    <div>
+                        <img src="images/icon-about.png" alt="">
+                        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maiores, eaque sed labore,
+                            nam
+                            expedita ipsum animi dolorem voluptatem quis minus recusandae aut deleniti architecto
+                            tenetur.
+                            Totam
+                            eveniet vitae eum?</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus sequi facere
+                            optio
+                            adipisci quisquam, iusto dolore pariatur harum blanditiis. <a href="#">Read more</a></div>
+                    </div>
                 </div>
-                <button type="submit">SIGN UP</button>
-            </form>
+                <div class="col-md-3">
+                    <form action="post">
+                        <h3>Newsletter<br />Sign Up</h3>
+                        <div>Please, write an e-mail</div>
+                        <div>
+                            <input type="text" name="e-mail" id="email">
+                        </div>
+                        <button type="submit">SIGN UP</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <!--/About Us-->
