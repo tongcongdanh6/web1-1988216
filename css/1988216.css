@@ -1,0 +1,16 @@
+body {
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #7C7C7C;
+}
+
+#menu li a {
+    font-family: "Changa One", cursive;
+    color: #333333;
+}
+
+#menu li a:hover {
+    color: #2FA0B5;
+    background-color: none;
+}
