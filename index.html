@@ -18,12 +18,11 @@
     <!--header-->
     <header class="container">
         <nav class="navbar navbar-expand-sm navbar-light px-0">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Logo">
+            <a class="navbar-brand" href="#" id="logo">
+                <img id="logo"src="images/logo.png" alt="Logo">
             </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                data-target="#menu" aria-controls="menu" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="menu">
@@ -62,16 +61,16 @@
     <!--/header-->
 
     <!--banner-->
-    <div class="container-fluid">
+    <div class="container-fluid" id="banner">
         <div class="container text-center">
-            <h4>
+            <h4 class="text-white">
                 Tasty cakes and ice-cream<br /> for everyone
             </h4>
             <div>
-                <a href="#">see our menu</a>
+                <a id="btn-menu" href="#">see our menu</a>
             </div>
-            <ul>
-                <li><span>0</span></li>
+            <ul id="dots">
+                <li class="active"><span>0</span></li>
                 <li><span>1</span></li>
                 <li><span>2</span></li>
             </ul>
@@ -81,41 +80,41 @@
 
     <!--main-->
     <div class="container">
-        <div class="row">
+        <div class="row my-5">
             <div class="col text-center">
                 <img src="images/icon-1.png" alt="">
                 <h4>Coffee</h4>
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+                <a class="readmore" href="#">Read more</a>
             </div>
             <div class="col text-center">
                 <img src="images/icon-2.png" alt="">
                 <h4>Drinks</h4>
-                <div>Temporibus quisquam voluptatum atque obcaecati consectetur velit incidunt.</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Temporibus quisquam voluptatum atque obcaecati consectetur velit incidunt.</div>
+                <a class="readmore" href="#">Read more</a>
             </div>
             <div class="col text-center">
                 <img src="images/icon-3.png" alt="">
                 <h4>Cakes</h4>
-                <div>Asperiores veniam quam nobis nostrum? Nemo, aperiam alias?</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Asperiores veniam quam nobis nostrum? Nemo, aperiam alias?</div>
+                <a class="readmore" href="#">Read more</a>
             </div>
             <div class="col text-center">
                 <img src="images/icon-4.png" alt="">
                 <h4>Ice-cream</h4>
-                <div>Laudantium, consequatur delectus doloribus ab dolor laboriosam? Harum.</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Laudantium, consequatur delectus doloribus ab dolor laboriosam? Harum.</div>
+                <a class="readmore" href="#">Read more</a>
             </div>
         </div>
     </div>
     <!--/main-->
 
     <!--About Us-->
-    <div class="container-fluid">
+    <div class="container-fluid about py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <h3>
+                    <h3 class="text-white">
                         About Us
                     </h3>
                     <div>
@@ -126,13 +125,13 @@
                             tenetur.
                             Totam
                             eveniet vitae eum?</div>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus sequi facere
+                        <div class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus sequi facere
                             optio
                             adipisci quisquam, iusto dolore pariatur harum blanditiis. <a href="#">Read more</a></div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <form action="post">
+                    <form action="post" id="frm-signup">
                         <h3>Newsletter<br />Sign Up</h3>
                         <div>Please, write an e-mail</div>
                         <div>
