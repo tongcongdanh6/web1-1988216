@@ -280,3 +280,24 @@ footer nav a.active {
 }
 
 /* !ABOUT PAGE */
+
+
+/* MENU PAGE */
+#gallery-filter a {
+    display: inline-block;
+    color: #2FA0D5;
+    padding: 10px 10px 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#gallery-filter a.active,
+#gallery-filter a:hover {
+    color: #333333;
+}
+
+#gallery-filter a.active {
+    font-weight: bold;
+}
+
+/* !MENU PAGE */
