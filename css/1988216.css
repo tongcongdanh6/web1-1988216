@@ -18,37 +18,9 @@ body {
     background-color: none;
 }
 
-@media screen and (min-width: 768px) {
-    #logo {
-        position: relative;
-    }
-    
-    #logo:after {
-        position: absolute;
-        content: "";
-        background: url('/images/logo_bg.png') 0 0 no-repeat;
-        width: 188px;
-        height: 133px;
-        bottom: -140px;
-        left: -2px;
-    }
-    #frm-search {
-        position: relative;
-    }
-    #frm-search:after {
-        position: absolute;
-        content: "";
-        background: url('/images/search_bg.png') 0 0 no-repeat;
-        width: 230px;
-        height: 44px;
-        left: 10px;
-        bottom: -72px;
-    }
-
-    #menu li {
-        margin-left: 25px;
-        padding: 0;
-    }
+#menu li {
+    margin-left: 25px;
+    padding: 0;
 }
 
 #frm-search {
@@ -205,5 +177,106 @@ h3 {
 }
 
 #frm-signup {
-    
+    border: 3px dashed #814E64;
+    padding: 20px 10px;
+    border-radius: 10px;
+    overflow: auto;
 }
+
+#frm-signup h3 {
+    font-size: 30px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+#frm-signup input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 38px;
+    padding: 10px;
+    box-shadow: 0 0 0;
+    margin: 6px 0;
+}
+
+#frm-signup button {
+    float: right;
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    background-color: #333333;
+    font: 22px 'Changa One', cursive;
+    text-transform: uppercase;
+    padding: 10px 34px;
+}
+
+/* !about */
+
+
+/* News */
+.date {
+    text-align: center;
+    background-color: #73C926;
+    color: #fff;
+    font: 30px 'Changa One', cursive;
+    line-height: 30px;
+    padding: 8px 0;
+    border-radius: 14px;
+    margin: 10px 0;
+}
+
+/* !News */
+
+
+/* Footer */
+footer {
+    background: url('/images/bg.gif') 0 center repeat;
+    text-align: center;
+    padding: 20px;
+}
+
+footer li {
+    display: inline-block;
+    padding: 0 90px 15px 0;
+}
+
+footer a {
+    color: #7C7C7C;
+    text-decoration: none;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer nav a:hover,
+footer nav a.active {
+    color: #FA97C2;
+    text-decoration: none;
+}
+/* !Footer */
+
+
+
+
+
+/* ABOUT PAGE */
+#small-banner {
+    background: url('/images/bg_slider.gif') center top repeat;
+    padding: 0.25rem;
+    content: "";
+}
+
+#testimonials .col {
+    background: url('/images/quot.png') top left no-repeat;
+    padding-left: 50px;
+}
+.image-rounded {
+    border-radius: 1em;
+}
+
+/* !ABOUT PAGE */
