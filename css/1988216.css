@@ -150,6 +150,13 @@ h4 {
     margin: 10px 0;
 }
 
+h5 {
+    font-family: 'Changa One', cursive;
+    font-weight: 400;
+    color: #333333;
+    font-size: 20px;
+}
+
 a.readmore {
     text-decoration: underline;
     color: #2FA0D5;
@@ -279,7 +286,34 @@ footer nav a.active {
     border-radius: 1em;
 }
 
+.about-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ourteam-link,
+.ourteam-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 /* !ABOUT PAGE */
+
+/* Page About Details */
+.google-plus-btn {
+    font-size: 13px;
+    color: #db3236;
+    border: 1px solid #c2c2c2;
+    border-radius: 2px;
+    padding: 3px 10px;
+}
+
+#readmore a.readmore {
+    text-decoration: none;
+}
+/* !Page About Details */
+
 
 
 /* MENU PAGE */
@@ -300,4 +334,44 @@ footer nav a.active {
     font-weight: bold;
 }
 
+.gallery-detail-img {
+    width: 40%;
+}
 /* !MENU PAGE */
+
+
+
+/* BLOG */
+.blog-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-link:hover {
+    text-decoration: none;
+}
+
+.blog-link-2 {
+    text-decoration: none;
+    color: #2FA0D5;
+}
+
+.pagination-btn {
+    color: #2FA0D5;
+    border: 1px solid #c2c2c2;
+    background-color: #fff;
+    padding: 3px 10px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #73C906;
+    color: #fff;
+}
+
+.pagination-btn.active {
+    color: #73C906;
+}
+
+/* !BLOG */
