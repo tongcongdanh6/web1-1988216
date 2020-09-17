@@ -65,71 +65,80 @@
 
     <div class="container py-5">
         <h3 class="text-dark mb-5">Contacts</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0471896668355!2d106.68677861485084!3d10.807697792300324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c339a49231%3A0xe1ec967a476d36ff!2zMTA5YiBIb8OgbmcgSG9hIFRow6FtLCBQaMaw4budbmcgNiwgQsOsbmggVGjhuqFuaCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1600337241617!5m2!1svi!2s" style="width: 100%; height: 300px;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0471896668355!2d106.68677861485084!3d10.807697792300324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c339a49231%3A0xe1ec967a476d36ff!2zMTA5YiBIb8OgbmcgSG9hIFRow6FtLCBQaMaw4budbmcgNiwgQsOsbmggVGjhuqFuaCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1600337241617!5m2!1svi!2s"
+            style="width: 100%; height: 300px;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
         <div class="row">
             <div class="col-md-4">
                 <h3 class="text-dark">Address:</h3>
                 <div class="mt-5">
-                    138 Atlantis Ln<br/>
-                    Kingsport<br/>
+                    138 Atlantis Ln<br />
+                    Kingsport<br />
                     Illinois 121164
                 </div>
             </div>
             <div class="col-md-4">
                 <h3 class="text-dark">Phones:</h3>
                 <div class="mt-5">
-                    +1 800 559 6580<br/>
+                    +1 800 559 6580<br />
                     +1 504 889 9898
                 </div>
             </div>
             <div class="col-md-4">
                 <h3 class="text-dark">E-mail:</h3>
                 <div class="mt-5">
-                    <a class="mailto_link" href="mailto:mail@demolink.org">mailto:mail@demolink.org</a><br/>
+                    <a class="mailto_link" href="mailto:mail@demolink.org">mailto:mail@demolink.org</a><br />
                     <i>Download information as: <a href="#" class="mailto_link">vCard</a></i>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <h3 class="text-dark">
-                    Miscellaneous information:
-                </h3>
-                <p class="mt-3">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat minima accusamus vitae nihil animi repellat harum saepe sapiente mollitia, nostrum voluptatibus autem quasi, perferendis laborum amet nam eius, sequi illo totam maiores assumenda quaerat iure reprehenderit! Veritatis beatae recusandae cumque cum ipsa sed debitis sequi, assumenda nisi soluta facere quibusdam.
-                </p>
-                <p>
-                    <i>Send and email. All fields with an * are required.</i>
-                </p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="miscell_name">Name *</label><br/>
-                        <input class="inset-shadow-input-w100" type="text" name="miscell_name" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="miscell_email">Email *</label><br/>
-                        <input class="inset-shadow-input-w100" type="text" name="miscell_email" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="miscell_subject">Subject *</label><br/>
-                        <input class="inset-shadow-input-w100" type="text" name="miscell_subject" required>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <label for="miscell_message">Message *</label><br/>
-                        <textarea class="inset-shadow-input-w100" rows="6" name="miscell_message" required></textarea>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col text-right">
-                        <div>
-                            Send copy to yourself
-                            <input type="checkbox">
-                            <button class="miscell-submit-btn">Send Email</button>
+                <form method="post">
+                    <h3 class="text-dark">
+                        Miscellaneous information:
+                    </h3>
+                    <p class="mt-3">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat minima accusamus vitae nihil
+                        animi repellat harum saepe sapiente mollitia, nostrum voluptatibus autem quasi, perferendis
+                        laborum amet nam eius, sequi illo totam maiores assumenda quaerat iure reprehenderit! Veritatis
+                        beatae recusandae cumque cum ipsa sed debitis sequi, assumenda nisi soluta facere quibusdam.
+                    </p>
+                    <p>
+                        <i>Send and email. All fields with an * are required.</i>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="miscell_name">Name *</label><br />
+                            <input class="inset-shadow-input-w100" type="text" name="miscell_name" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="miscell_email">Email *</label><br />
+                            <input class="inset-shadow-input-w100" type="text" name="miscell_email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="miscell_subject">Subject *</label><br />
+                            <input class="inset-shadow-input-w100" type="text" name="miscell_subject" required>
                         </div>
                     </div>
-                </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label for="miscell_message">Message *</label><br />
+                            <textarea class="inset-shadow-input-w100" rows="6" name="miscell_message"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col text-right">
+                            <div>
+                                Send copy to yourself
+                                <input type="checkbox">
+                                <button class="miscell-submit-btn">Send Email</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -163,10 +172,9 @@
 
                 var category = $(e.target).attr("data-filter");
 
-                if(category === "all") {
+                if (category === "all") {
                     $(".filter").show('3000');
-                }
-                else {
+                } else {
                     $('.filter').not(`.${category}`).hide('5000');
                     $('.filter').filter(`.${category}`).show('3000');
                 }
@@ -176,7 +184,6 @@
                 $(e.target).addClass("active");
             });
         });
-
     </script>
 
 </body>
