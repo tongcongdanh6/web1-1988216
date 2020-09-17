@@ -396,6 +396,7 @@ footer nav a.active {
     border: none;
     cursor: pointer;
     color:  #2FA0D5;
+    background-color: #fff;
 }
 
 .term_and_cond_link {
