@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/1988216.css">
     <link rel="stylesheet" href="css/banner.css">
+
 </head>
 
 <body>
@@ -20,7 +22,7 @@
     <header class="container">
         <nav class="navbar navbar-expand-sm navbar-light px-0">
             <a class="navbar-brand" href="#" id="logo">
-                <img id="logo"src="images/logo.png" alt="Logo">
+                <img id="logo" src="images/logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu"
                 aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,136 +62,81 @@
         </nav>
     </header>
     <!--/header-->
-
-    <!--banner-->
-    <div class="container-fluid" id="banner">
-        <div class="container text-center">
-            <h4 class="text-white">
-                Tasty cakes and ice-cream<br /> for everyone
-            </h4>
-            <div>
-                <a id="btn-menu" href="#">see our menu</a>
-            </div>
-            <ul id="dots">
-                <li class="active"><span>0</span></li>
-                <li><span>1</span></li>
-                <li><span>2</span></li>
-            </ul>
-        </div>
-    </div>
-    <!--/banner-->
-
-    <!--main-->
-    <div class="container">
-        <div class="row my-5">
-            <div class="col text-center">
-                <img src="images/icon-1.png" alt="">
-                <h4>Coffee</h4>
-                <div class="pb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-                <a class="readmore" href="readmore.html">Read more</a>
-            </div>
-            <div class="col text-center">
-                <img src="images/icon-2.png" alt="">
-                <h4>Drinks</h4>
-                <div class="pb-2">Temporibus quisquam voluptatum atque obcaecati consectetur velit incidunt.</div>
-                <a class="readmore" href="readmore.html">Read more</a>
-            </div>
-            <div class="col text-center">
-                <img src="images/icon-3.png" alt="">
-                <h4>Cakes</h4>
-                <div class="pb-2">Asperiores veniam quam nobis nostrum? Nemo, aperiam alias?</div>
-                <a class="readmore" href="readmore.html">Read more</a>
-            </div>
-            <div class="col text-center">
-                <img src="images/icon-4.png" alt="">
-                <h4>Ice-cream</h4>
-                <div class="pb-2">Laudantium, consequatur delectus doloribus ab dolor laboriosam? Harum.</div>
-                <a class="readmore" href="readmore.html">Read more</a>
+    <div id="content">
+        <!--banner-->
+        <div class="container-fluid" id="banner">
+            <div class="container text-center">
+                <h4 class="text-white">
+                    Tasty cakes and ice-cream<br /> for everyone
+                </h4>
+                <div>
+                    <a id="btn-menu" href="#">see our menu</a>
+                </div>
+                <ul id="dots">
+                    <li class="active"><span>0</span></li>
+                    <li><span>1</span></li>
+                    <li><span>2</span></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <!--/main-->
+        <!--/banner-->
 
-    <!--About Us-->
-    <div class="container-fluid about py-4">
+        <!--main-->
         <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <h3 class="text-white">
-                        About Us
-                    </h3>
-                    <div>
-                        <img src="images/icon-about.png" alt="">
-                        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maiores, eaque sed labore,
-                            nam
-                            expedita ipsum animi dolorem voluptatem quis minus recusandae aut deleniti architecto
-                            tenetur.
-                            Totam
-                            eveniet vitae eum?</div>
-                        <div class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus sequi facere
-                            optio
-                            adipisci quisquam, iusto dolore pariatur harum blanditiis. <a class="readmore" href="readmore.html">Read more</a></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <form action="post" id="frm-signup">
-                        <h3>Newsletter<br />Sign Up</h3>
-                        <div>Please, write an e-mail</div>
+            <div class="row my-5" id="products">
+
+            </div>
+        </div>
+        <!--/main-->
+
+        <!--About Us-->
+        <div class="container-fluid about py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3 class="text-white">
+                            About Us
+                        </h3>
                         <div>
-                            <input type="text" name="e-mail" id="email">
+                            <img src="images/icon-about.png" alt="">
+                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maiores, eaque sed
+                                labore,
+                                nam
+                                expedita ipsum animi dolorem voluptatem quis minus recusandae aut deleniti architecto
+                                tenetur.
+                                Totam
+                                eveniet vitae eum?</div>
+                            <div class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                                voluptatibus sequi facere
+                                optio
+                                adipisci quisquam, iusto dolore pariatur harum blanditiis. <a class="readmore"
+                                    href="readmore.html">Read more</a></div>
                         </div>
-                        <button type="submit">SIGN UP</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/About Us-->
-
-    <!--News-->
-    <div class="container py-5">
-        <h3>News</h3>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="date">25.<br />Dec.</div>
-                        <a class="readmore" href="readmore.html">Read more</a>
                     </div>
-                    <div class="col-sm-8">
-                        <h4>Accumsan</h4>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="date">25.<br />Dec.</div>
-                        <a class="readmore" href="readmore.html">Read more</a>
-                    </div>
-                    <div class="col-sm-8">
-                        <h4>Accumsan</h4>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="date">25.<br />Dec.</div>
-                        <a class="readmore" href="readmore.html">Read more</a>
-                    </div>
-                    <div class="col-sm-8">
-                        <h4>Accumsan</h4>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <div class="col-md-3">
+                        <form action="post" id="frm-signup">
+                            <h3>Newsletter<br />Sign Up</h3>
+                            <div>Please, write an e-mail</div>
+                            <div>
+                                <input type="text" name="e-mail" id="email">
+                            </div>
+                            <button type="submit">SIGN UP</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--/News-->
+        <!--/About Us-->
 
+        <!--News-->
+        <div class="container py-5">
+            <h3>News</h3>
+            <div class="row" id="news">
+
+            </div>
+        </div>
+        <!--/News-->
+    </div>
     <!--footer-->
     <footer class="container-fluid">
         <nav>
@@ -210,6 +157,91 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v4.7.6.js"></script>
+
+
+    <script id="products-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col text-center">
+            <img src={{thumbpath}} alt="">
+            <h4>{{name}}</h4>
+            <div class="pb-2">{{summary}}</div>
+            <a class="readmore" href="#" onclick='getData("products/{{id}}","#content","#readmore-template")'>Read more</a>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="news-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="date">{{date}}</div>
+                    <a class="readmore" href="#" onclick='getData("news/{{id}}","#content","#readmore-template")'>Read more</a>
+                </div>
+                <div class="col-sm-8">
+                    <h4>{{name}}</h4>
+                    <div>{{summary}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="readmore-template" type="text/x-handlebars-template">
+        <scr{{!}}ipt type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f631587ff92a41c"></scr{{!}}ipt>
+        <div class="container-fluid" id="small-banner"></div>
+        {{#each data}}
+        <div class="container py-5" id="readmore">
+            <h3 class="text-dark mb-5">{{name}}</h3>
+            <div class="row">
+                <div class="col">
+                    {{{description}}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mr-5" style="display: inline-block;">
+                        <a href="https://plus.google.com/share?url=http://web1-1988215.herokuapp.com/" target="_blank"
+                            title="Google Plus"><i class="fa fa-google-plus google-plus-btn"></i></a>
+                    </div>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div style="display: inline-block;" class="addthis_inline_share_toolbox"></div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            getData('products', '#products', '#products-template');
+            getData('news', '#news', '#news-template');
+        });
+
+        function getData(request, targetid, sourceid) {
+            $.ajax({
+                url: 'http://web1-api.herokuapp.com/api/' + request,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    let jsonData = {
+                        data
+                    };
+                    let target = $(targetid);
+                    let source = $(sourceid).html();
+                    let template = Handlebars.compile(source);
+                    $(target).html(template(jsonData));
+                }
+            });
+        }
+    </script>
+
+
 </body>
 
 </html>
