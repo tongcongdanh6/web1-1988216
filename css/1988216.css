@@ -383,7 +383,7 @@ footer nav a.active {
     font-size: 11px;
 }
 
-.comment_input_text{
+.inset-shadow-input-w100{
     width: 100%;
     font-size: 11px;
     border-radius: 3px;
@@ -395,13 +395,13 @@ footer nav a.active {
 .comment-submit-btn {
     border: none;
     cursor: pointer;
-    color:  #2FA0D5;
+    color:  #2FA0B5;
     background-color: #fff;
 }
 
 .term_and_cond_link {
     text-decoration: none;
-    color: #2FA0D5;
+    color: #2FA0B5;
 }
 
 .comment_counter {
@@ -416,3 +416,20 @@ footer nav a.active {
     border-bottom: 1px solid #D5D5D5;
 }
 /* !BLOG */
+
+
+/* CONTACTS */
+
+.mailto_link {
+    color: #2FA0B5;
+    text-decoration: none;
+}
+
+.miscell-submit-btn {
+    border: none;
+    cursor: pointer;
+    color:  #2FA0B5;
+    text-decoration: underline;
+    background-color: #fff;
+}
+/* !CONTACTS */
