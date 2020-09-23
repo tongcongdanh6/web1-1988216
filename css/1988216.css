@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     line-height: 20px;
     color: #7C7C7C;
+    overflow-x: hidden;
 }
 
 /* header */
@@ -320,6 +321,12 @@ footer nav a.active {
     display: inline-block;
     color: #2FA0D5;
     padding: 10px 10px 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.categories-list-item {
+    color: #2FA0D5;
     text-decoration: none;
     cursor: pointer;
 }

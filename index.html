@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/1988216.css">
     <link rel="stylesheet" href="css/banner.css">
 
@@ -64,12 +65,12 @@
     <!--/header-->
     <div id="content">
         <!--banner-->
-        <div class="container-fluid" id="banner">
+        <div class="container-fluid animate__animated animate__bounceInLeft" id="banner">
             <div class="container text-center">
-                <h4 class="text-white">
+                <h4 class="text-white animate__animated animate__fadeIn animate__delay-1s animate__slow">
                     Tasty cakes and ice-cream<br /> for everyone
                 </h4>
-                <div>
+                <div class="animate__animated animate__delay-1s animate__jackInTheBox">
                     <a id="btn-menu" href="#">see our menu</a>
                 </div>
                 <ul id="dots">
@@ -90,7 +91,7 @@
         <!--/main-->
 
         <!--About Us-->
-        <div class="container-fluid about py-4">
+        <div class="container-fluid about py-4 animate__animated animate__delay-2s animate__fadeIn">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
@@ -157,12 +158,13 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/handlebars-v4.7.6.js"></script>
 
 
     <script id="products-template" type="text/x-handlebars-template">
         {{#each data}}
-        <div class="col text-center">
+        <div class="col text-center animate__animated animate__zoomIn animate__delay-{{@index}}s">
             <img src={{thumbpath}} alt="">
             <h4>{{name}}</h4>
             <div class="pb-2">{{summary}}</div>

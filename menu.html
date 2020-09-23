@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/1988216.css">
 </head>
 
@@ -65,38 +66,16 @@
 
     </div>
 
-    <div class="container py-5" id="gallery">
+    <div class="container py-5">
         <h3 class="text-dark mb-5">Menu</h3>
         <div>
             <div class="font-weight-bold">Filter by category:</div>
-            <div id="gallery-filter">
-                <a class="filter-btn active" data-filter="all">Show all</a>
-                <a class="filter-btn" data-filter="1st-cat">First category</a>
-                <a class="filter-btn" data-filter="2nd-cat">Second category</a>
-                <a class="filter-btn" data-filter="3rd-cat">Third category</a>
-            </div>
+
+            <ul class="nav justify-content-left" id="gallery-categories">
+            </ul>
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 1st-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img1.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 1st-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img2.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 1st-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img3.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 1st-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img4.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 2nd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img5.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 2nd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img6.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 2nd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img7.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 3rd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img8.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 3rd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img9.jpg" alt=""
-                    class="img-thumbnail"></a></div>
-            <div class="col-sm-6 col-md-4 pr-1 pb-3 filter 3rd-cat"><a href="gallery_details.html"><img src="images/gallery/gallery-img10.jpg" alt=""
-                    class="img-thumbnail"></a></div>
+        <div class="row" id="gallery">
+            <img src="images/camera-loader.gif">
         </div>
     </div>
 
@@ -120,29 +99,40 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/handlebars-v4.7.6.js"></script>
+    <script src="js/1988216.js"></script>
+
+
+    <script id="gallery-categories-template" type="text/x-handlebars-template">
+        <li class="nav-item">
+            <a class="nav-link categories-list-item disabled pl-0" href="#" onclick="getGallery(this)">Show all</a>
+        </li>
+        {{#each data}}
+        <li class="nav-item">
+            <a class="nav-link categories-list-item" href="#catid-{{id}}" onclick="getGallery(this, '{{id}}')">{{name}}</a>
+        </li>
+        {{/each}}
+    </script>
+
+
+    <script id="gallery-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col-sm-6 col-md-4 pr-1 pb-3">
+            <a href="gallery_details.html">
+                <img src="{{thumbpath}}" alt=""
+            class="img-thumbnail animate__animated animate__fadeIn animate__fast">
+           </a>
+        </div>
+        {{/each}}
+    </script>
+
 
     <script>
-        // Script for Gallery Filter
-        $(document).ready(() => {
-            // Click listener
-            $('.filter-btn').click((e) => {
-
-                var category = $(e.target).attr("data-filter");
-
-                if(category === "all") {
-                    $(".filter").show('3000');
-                }
-                else {
-                    $('.filter').not(`.${category}`).hide('5000');
-                    $('.filter').filter(`.${category}`).show('3000');
-                }
-
-                // Change class .active state to display current filter
-                $('.filter-btn').not($(e.target)).removeClass("active");
-                $(e.target).addClass("active");
-            });
+        $(document).ready(function(){
+            getData('gallery-categories', '#gallery-categories', '#gallery-categories-template');
+            getData('gallery', '#gallery', '#gallery-template');
         });
-
     </script>
 
 </body>
