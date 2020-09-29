@@ -29,3 +29,16 @@ getGallery = (e, id) => {
 
     $(e).addClass('disabled');
 }
+
+
+getDetailsOfGallery = (id) => {
+    if(id) {
+        getData(`gallery/${id}`, '#content', '#gallery-details-template');
+    }
+}
+
+getBlogDetails = (id) => {
+    if(id) {
+        
+    }
+}

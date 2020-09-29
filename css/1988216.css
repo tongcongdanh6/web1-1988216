@@ -290,6 +290,9 @@ footer nav a.active {
     text-decoration: none;
     color: inherit;
 }
+.about-link:hover {
+    text-decoration: none;
+}
 
 .ourteam-link,
 .ourteam-link:hover {

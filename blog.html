@@ -18,7 +18,7 @@
     <!--header-->
     <header class="container">
         <nav class="navbar navbar-expand-sm navbar-light px-0">
-            <a class="navbar-brand" href="#" id="logo">
+            <a class="navbar-brand" href="index.html" id="logo">
                 <img id="logo" src="images/logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu"
@@ -65,27 +65,23 @@
 
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-8">
-                <h3 class="text-dark mb-4">Blog</h3>
+            <div class="col-md-8" id="blogs">
+                <!-- <h3 class="text-dark mb-4">Blog</h3>
                 <div class="row mb-5">
                     <div class="col">
                         <h4>Lorem, ipsum dolor.</h4>
                         <div class="mb-3">by Super User in <a href="#" class="blog-link-2">Blog. Lorem, ipsum dolor.</a> on 27 December 2012 Hits: 208 <a href="#" class="blog-link-2">Comments (3)</a></div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="image-rounded" src="/images/blog/blog-thumb1.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 pt-3 text-justify">
+                        <div class="text-justify">
+                            <img class="image-rounded float-left mr-3" src="/images/blog/blog-thumb1.jpg" alt="">
+                            <div>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum autem iste excepturi omnis non ab quia expedita temporibus, pariatur quam blanditiis ea est natus aliquid et ipsum, reprehenderit, facere voluptatem cum explicabo corporis quaerat officia inventore modi. Dicta doloremque, libero tenetur ratione nulla possimus repellendus sunt esse enim ipsum quo!
-                                <div class="mt-4">
-                                    <a href="blog_readmore.html" class="readmore">Read more</a>
-                                </div>
                             </div>
+                            <a href="blog_readmore.html" class="readmore mt-3" style="display: block;">Read more</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="row mb-5">
+                <!-- <div class="row mb-5">
                     <div class="col">
                         <h4>Lorem, ipsum dolor.</h4>
                         <div class="mb-3>by Super User in <a href="#" class="blog-link-2">Blog. Lorem, ipsum dolor.</a> on 27 December 2012 Hits: 208 <a href="#" class="blog-link-2">Comments (3)</a></div>
@@ -119,68 +115,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             
 
             <div class="col-md-4">
                 <h3 class="text-dark mb-4">Categories</h3>
-                <div class="mb-5">
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">Blog. Lorem, ipsum dolor.</a>
-                    </div>      
+                <div class="mb-5" id="blogs-categories">
+                    <!-- Get API Here -->
                 </div>
                 <h3 class="text-dark mb-4">Archives</h3>
-                <div class="mb-5">
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">September, 2012</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">August, 2012</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">July, 2012</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">June, 2012</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">May, 2012</a>
-                    </div>
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">April, 2012</a>
-                    </div>      
-                    <div class="mb-2">
-                        <img src="/images/marker1.png" alt="" class="mr-1">
-                        <a class="blog-link" href="#">March, 2012</a>
-                    </div>    
+                <div class="mb-5" id="blogs-archives">
+                    <!-- Get API Here -->
                 </div>
             </div>
         </div>
@@ -215,6 +161,57 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v4.7.6.js"></script>
+    <script src="js/1988216.js"></script>
+
+    <script id="blogs-categories-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="mb-2">
+            <a class="blog-link" href="#">
+                <img src="/images/marker1.png" alt="" class="mr-1">
+                {{name}}
+            </a>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="blogs-archives-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="mb-2">
+            <a class="blog-link" href="#">
+                <img src="/images/marker1.png" alt="" class="mr-1">
+                {{monthString}}, {{year}}
+            </a>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="blogs-template" type="text/x-handlebars-template">
+        <h3 class="text-dark mb-4">Blog</h3>
+        {{#each data.data}}
+        <div class="row mb-5">
+            <div class="col">
+                <h4>{{name}}</h4>
+                <div class="mb-3">by Super User in <a href="#" class="blog-link-2">Blog. {{category.name}}</a> on {{date}} Hits: 208 <a href="#" class="blog-link-2">Comments ({{comments.length}})</a></div>
+                <div class="text-justify">
+                    <img class="image-rounded float-left mr-3" src="{{thumbpath}}" alt="">
+                    <div>
+                        {{summary}}
+                    </div>
+                    <a href="blog_readmore.html" class="readmore mt-3" style="display: block;">Read more</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            getData("blogs-categories","#blogs-categories","#blogs-categories-template");
+            getData("blogs-archives","#blogs-archives","#blogs-archives-template");
+            getData("blogs","#blogs","#blogs-template")
+        });
+    </script>
 </body>
 
 </html>
