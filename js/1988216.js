@@ -76,8 +76,69 @@ getBlogs = (request, curPage = 1) => {
 }
 
 getBlogDetail = (request) => {
-    console.log(request);
+    //console.log(request);
     if(request) {
         getData(`blogs/${request}`, '#blogs', '#blogs-readmore-template');
+    }
+}
+
+addComment = () => {
+    // Validate Content of Comment
+    if($("#cke_comment iframe").contents().find("body").text() == "")
+    {
+        $("#errorContent").html("<div class='alert alert-danger'>Content of Comment cannot be empty string</div>");
+        $("#errorModal").modal();
+    }
+    else {
+        let formData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            comment: $("#cke_comment iframe").contents().find("body").text(),
+            blogId: $("#frm-comment").data("blog-id"),
+            agree: $("#agree").prop("checked")
+        }
+
+        $.ajax({
+            url: 'https://web1-api.herokuapp.com/users/authenticate',
+            dataType: 'json',
+            type: 'POST',
+            data: {
+                username: 'test',
+                password: '1c3cr3@m' 
+            },
+            success: function(result) {
+                console.log(result.token);
+                console.table(formData);
+                $.ajax({
+                    url: 'https://web1-api.herokuapp.com/users/comment',
+                    dataType: 'json',
+                    type: "POST",
+                    headers: {
+                        "Authorization":`Bearer ${result.token}`
+                    },
+                    data: formData,
+                    success: function() {
+                        $("#errorContent").html("<div class='alert alert-success'>Your comment has been added</div>");
+                        $("#errorModal").modal();
+                        getBlogDetail(formData.blogId);
+                    },
+                    error: function(xhr, status, error) {
+                        let text = "";
+                        switch(error) {
+                            case "Unauthorized":
+                                text = "You are not permit to comment this blog";
+                                break;
+                            default:
+                                text = error;
+                        }
+                        $("#errorContent").html(`<div class='alert alert-danger'>${text}</div>`);
+                        $("#errorModal").modal();
+                    }
+                });
+            }
+
+        });
+
+        
     }
 }

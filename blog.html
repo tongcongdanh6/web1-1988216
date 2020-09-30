@@ -100,6 +100,31 @@
             Ice-cream &copy; 2019 | <a class="text-uppercase" href="#">Privacy policy</a>
         </div>
     </footer>
+    
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Validation Error</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body" id="errorContent">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -197,28 +222,28 @@
         </div>
         <div class="row mt-5">
             <div class="col">
-                <form>
+                <form method="POST" id="frm-comment" onsubmit="event.preventDefault(); addComment()" data-blog-id={{id}}>
                     <h5 class="pb-2">Leave your comments</h5>
                     <h5>Post comment as a guest</h5>
                     <div class="mb-2">
                         <div class="comment_input_wrapper mr-3">
                             <label for="comment_name">Name (Required):</label><br />
-                            <input class="inset-shadow-input-w100" type="text" name="comment_name"
+                            <input class="inset-shadow-input-w100" type="text" name="name" id="name"
                                 placeholder="Your Name" required>
                         </div>
                         <div class="comment_input_wrapper">
                             <label for="comment_email">Email (Required):</label><br />
-                            <input class="inset-shadow-input-w100" type="email" name="comment_email"
+                            <input class="inset-shadow-input-w100" type="email" name="email" id="email"
                                 placeholder="Your Email" required>
                         </div>
                     </div>
-                    <textarea name="comment"></textarea>
+                    <textarea name="comment" id="comment" required></textarea>
                     <scr{{!}}ipt>
                         CKEDITOR.replace('comment');
                     </scr{{!}}ipt>
                     <div class="row mt-3">
                         <div class="col-md-5">
-                            <input type="checkbox" name="comment_agreement">
+                            <input type="checkbox" name="agree" id="agree" value="false" required>
                             Agree to <sub><a href="#" class="term_and_cond_link">terms and conditions</a></sub>
                         </div>
                         <div class="col-md-7 text-right">
