@@ -99,7 +99,7 @@ addComment = () => {
         }
 
         $.ajax({
-            url: 'https://web1-api.herokuapp.com/users/authenticate',
+            url: 'http://web1-api.herokuapp.com/users/authenticate',
             dataType: 'json',
             type: 'POST',
             data: {
@@ -110,7 +110,7 @@ addComment = () => {
                 console.log(result.token);
                 console.table(formData);
                 $.ajax({
-                    url: 'https://web1-api.herokuapp.com/users/comment',
+                    url: 'http://web1-api.herokuapp.com/users/comment',
                     dataType: 'json',
                     type: "POST",
                     headers: {
