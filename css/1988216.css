@@ -380,8 +380,11 @@ footer nav a.active {
 }
 
 .pagination-btn.active {
-    color: #73C906;
+    color: #fff;
+    background-color: #73C906;
+    cursor: not-allowed;
 }
+
 
 .comment_input_wrapper {
     display: inline-block;
@@ -423,6 +426,24 @@ footer nav a.active {
 
 .comment_contain {
     border-bottom: 1px solid #D5D5D5;
+}
+
+.comment-info {
+    font-size: 11px;
+    padding-bottom: 12px;
+}
+.comment-datetime {
+    font-size: 9px;
+}
+
+.comment-content {
+    font-size: 13px;
+    padding-bottom: 30px;
+    line-height: 1.5;
+}
+
+.comment {
+    border-bottom: 1px solid #aaaaaa;
 }
 /* !BLOG */
 

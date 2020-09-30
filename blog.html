@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/1988216.css">
+    <script src="js/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -64,58 +66,9 @@
     <div class="container-fluid" id="small-banner"></div>
 
     <div class="container py-5">
-        <div class="row">
+        <div class="row pb-5">
             <div class="col-md-8" id="blogs">
-                <!-- <h3 class="text-dark mb-4">Blog</h3>
-                <div class="row mb-5">
-                    <div class="col">
-                        <h4>Lorem, ipsum dolor.</h4>
-                        <div class="mb-3">by Super User in <a href="#" class="blog-link-2">Blog. Lorem, ipsum dolor.</a> on 27 December 2012 Hits: 208 <a href="#" class="blog-link-2">Comments (3)</a></div>
-                        <div class="text-justify">
-                            <img class="image-rounded float-left mr-3" src="/images/blog/blog-thumb1.jpg" alt="">
-                            <div>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum autem iste excepturi omnis non ab quia expedita temporibus, pariatur quam blanditiis ea est natus aliquid et ipsum, reprehenderit, facere voluptatem cum explicabo corporis quaerat officia inventore modi. Dicta doloremque, libero tenetur ratione nulla possimus repellendus sunt esse enim ipsum quo!
-                            </div>
-                            <a href="blog_readmore.html" class="readmore mt-3" style="display: block;">Read more</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="row mb-5">
-                    <div class="col">
-                        <h4>Lorem, ipsum dolor.</h4>
-                        <div class="mb-3>by Super User in <a href="#" class="blog-link-2">Blog. Lorem, ipsum dolor.</a> on 27 December 2012 Hits: 208 <a href="#" class="blog-link-2">Comments (3)</a></div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="image-rounded" src="/images/blog/blog-thumb2.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 pt-3 text-justify">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum autem iste excepturi omnis non ab quia expedita temporibus, pariatur quam blanditiis ea est natus aliquid et ipsum, reprehenderit, facere voluptatem cum explicabo corporis quaerat officia inventore modi. Dicta doloremque, libero tenetur ratione nulla possimus repellendus sunt esse enim ipsum quo!
-                                <div class="mt-4">
-                                    <a href="blog_readmore.html" class="readmore">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col">
-                        <h4>Lorem, ipsum dolor.</h4>
-                        <div class="mb-3">by Super User in <a href="#" class="blog-link-2">Blog. Lorem, ipsum dolor.</a> on 27 December 2012 Hits: 208 <a href="#" class="blog-link-2">Comments (3)</a></div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="image-rounded" src="/images/blog/blog-thumb3.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 pt-3 text-justify">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum autem iste excepturi omnis non ab quia expedita temporibus, pariatur quam blanditiis ea est natus aliquid et ipsum, reprehenderit, facere voluptatem cum explicabo corporis quaerat officia inventore modi. Dicta doloremque, libero tenetur ratione nulla possimus repellendus sunt esse enim ipsum quo!
-                                <div class="mt-4">
-                                    <a href="blog_readmore.html" class="readmore">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <!--API Here-->
             </div>
             
 
@@ -129,15 +82,6 @@
                     <!-- Get API Here -->
                 </div>
             </div>
-        </div>
-        <div class="row pl-4">
-            <button class="pagination-btn">Start</button>
-            <button class="pagination-btn">Prev</button>
-            <button class="pagination-btn active">1</button>
-            <button class="pagination-btn">2</button>
-            <button class="pagination-btn">3</button>
-            <button class="pagination-btn">Next</button>
-            <button class="pagination-btn">End</button>
         </div>
     </div>
 
@@ -162,14 +106,15 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/handlebars-v4.7.6.js"></script>
+    <script src="js/handlebars-pagination-helper.js"></script>
     <script src="js/1988216.js"></script>
 
     <script id="blogs-categories-template" type="text/x-handlebars-template">
         {{#each data}}
         <div class="mb-2">
-            <a class="blog-link" href="#">
+            <a class="blog-link" href="#" onclick="getBlogs('blogs/categories/{{id}}')">
                 <img src="/images/marker1.png" alt="" class="mr-1">
-                {{name}}
+                Blog. {{name}}
             </a>
         </div>
         {{/each}}
@@ -178,9 +123,12 @@
     <script id="blogs-archives-template" type="text/x-handlebars-template">
         {{#each data}}
         <div class="mb-2">
-            <a class="blog-link" href="#">
-                <img src="/images/marker1.png" alt="" class="mr-1">
-                {{monthString}}, {{year}}
+            <a 
+                class="blog-link" 
+                href="#" 
+                onclick="getBlogs('blogs/archives/{{month}}-{{year}}')">
+                    <img src="/images/marker1.png" alt="" class="mr-1">
+                    {{monthString}}, {{year}}
             </a>
         </div>
         {{/each}}
@@ -192,24 +140,147 @@
         <div class="row mb-5">
             <div class="col">
                 <h4>{{name}}</h4>
-                <div class="mb-3">by Super User in <a href="#" class="blog-link-2">Blog. {{category.name}}</a> on {{date}} Hits: 208 <a href="#" class="blog-link-2">Comments ({{comments.length}})</a></div>
+                <div class="mb-3">by Super User in 
+                    <a href="#" 
+                    class="blog-link-2" 
+                    onclick="getBlogs('categories/{{category.id}}')">
+                    Blog. {{category.name}}</a> 
+                    on {{date}} Hits: 208 
+                    <a 
+                        href="#" 
+                        class="blog-link-2" 
+                        onclick="getBlogDetail('{{id}}')">
+                        Comments ({{comments.length}})</a>
+                </div>
                 <div class="text-justify">
                     <img class="image-rounded float-left mr-3" src="{{thumbpath}}" alt="">
                     <div>
                         {{summary}}
                     </div>
-                    <a href="blog_readmore.html" class="readmore mt-3" style="display: block;">Read more</a>
+                    <a 
+                        href="#" 
+                        onclick="getBlogDetail('{{id}}')" 
+                        class="readmore mt-3" 
+                        style="display: block;">Read more</a>
                 </div>
             </div>
         </div>
         {{/each}}
+
+        <div id="blogs-pagination">
+
+        </div>
+    </script>
+
+    
+    <script id="blogs-readmore-template" type="text/x-handlebars-template">
+        <h3 class="text-dark mb-4">Blog</h3>
+        <scr{{!}}ipt type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f631587ff92a41c"></scr{{!}}ipt>
+        {{#each data}}
+        <div class="row mb-3">
+            <div class="col">
+                <h4>{{name}}</h4>
+                <div class="mb-3">by {{author}} in <a href="#" class="blog-link-2">Blog. {{category.name}}</a> on {{date}} Hits: 208 <a href="#" class="blog-link-2">Comments ({{comments.length}})</a></div>
+                <div class="text-justify">
+                    <img src="{{thumbpath}}" class="image-rounded float-left mr-3 mb-3" alt="">
+                    {{{description}}}
+
+                    <div class="mr-5" style="display: inline-block;">
+                        <a href="https://plus.google.com/share?url=http://web1-1988215.herokuapp.com/" target="_blank"
+                            title="Google Plus"><i class="fa fa-google-plus google-plus-btn"></i></a>
+                    </div>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div style="display: inline-block;" class="addthis_inline_share_toolbox"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <form>
+                    <h5 class="pb-2">Leave your comments</h5>
+                    <h5>Post comment as a guest</h5>
+                    <div class="mb-2">
+                        <div class="comment_input_wrapper mr-3">
+                            <label for="comment_name">Name (Required):</label><br />
+                            <input class="inset-shadow-input-w100" type="text" name="comment_name"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div class="comment_input_wrapper">
+                            <label for="comment_email">Email (Required):</label><br />
+                            <input class="inset-shadow-input-w100" type="email" name="comment_email"
+                                placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <textarea name="comment"></textarea>
+                    <scr{{!}}ipt>
+                        CKEDITOR.replace('comment');
+                    </scr{{!}}ipt>
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <input type="checkbox" name="comment_agreement">
+                            Agree to <sub><a href="#" class="term_and_cond_link">terms and conditions</a></sub>
+                        </div>
+                        <div class="col-md-7 text-right">
+                            <button class="comment-submit-btn" type="submit">Submit comment</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="comment_container mt-4">
+                    <div class="comment_counter">
+                        COMMENTS ({{comments.length}})
+                    </div>
+                    <div class="comment_contain container" id="comments">
+                        {{#each comments}}
+                        <div class="comment">
+                            <div class="comment-info">
+                                by {{name}} <span class="comment-datetime">{{date}}</span>
+                            </div>
+                            <div class="text-justify comment-content">
+                                {{summary}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {{/each}}
+    </script>
+
+    <script id="blogs-pagination-template" type="text/x-handlebars-template">
+        {{#pagination currentPage pageCount size api}}
+        <div class="row">
+            <div class="col">
+
+                {{#unless startFromFirstPage}}
+                    <button class="pagination-btn">Prev</button>
+                {{/unless}}
+
+                {{#each pages}}
+                  {{#if isCurrent}}
+                    <button class="pagination-btn active">{{page}}</button>
+                  {{/if}}
+                  {{#unless isCurrent}}
+                    <button class="pagination-btn" onclick="getBlogs('{{api}}','{{page}}')">{{page}}</button>
+                  {{/unless}}
+                {{/each}}
+                {{#unless endAtLastPage}}
+                    <button class="pagination-btn">Next</button>
+                {{/unless}}
+            </div>
+        </div>
+        {{/pagination}}
     </script>
 
     <script>
         $(document).ready(function(){
             getData("blogs-categories","#blogs-categories","#blogs-categories-template");
             getData("blogs-archives","#blogs-archives","#blogs-archives-template");
-            getData("blogs","#blogs","#blogs-template")
+            //getData("blogs","#blogs","#blogs-template");
+            getBlogs("blogs");
         });
     </script>
 </body>
