@@ -395,8 +395,7 @@ footer nav a.active {
     font-size: 11px;
 }
 
-.inset-shadow-input-w100{
-    width: 100%;
+.inset-shadow-input{
     font-size: 11px;
     border-radius: 3px;
     border: 1px solid #c2c2c2;
