@@ -1,0 +1,14 @@
+<h3 class="text-dark pb-4">Our Vision</h3>
+{{#each data}}
+    <div class="row pb-4">
+        <div class="col">
+            <a href="#" class="about-link" onclick='getData("visions/{{id}}","#content","#details-template")'>
+                <img class="image-rounded float-left mr-3" src="{{thumbpath}}" alt="">
+                <h4 class="my-0 py-0">
+                    {{name}}
+                </h4>
+                {{summary}}
+            </a>
+        </div>
+    </div>
+{{/each}}

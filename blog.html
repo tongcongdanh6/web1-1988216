@@ -108,7 +108,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Validation Error</h5>
+                    <h5 class="modal-title"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -130,181 +130,16 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/handlebars-v4.7.6.js"></script>
+    <script src="js/handlebars.runtime-v4.7.6.js"></script>
     <script src="js/handlebars-pagination-helper.js"></script>
+    <script src="js/templates.js"></script>
     <script src="js/1988216.js"></script>
 
-    <script id="blogs-categories-template" type="text/x-handlebars-template">
-        {{#each data}}
-        <div class="mb-2">
-            <a class="blog-link" href="#" onclick="getBlogs('blogs/categories/{{id}}')">
-                <img src="/images/marker1.png" alt="" class="mr-1">
-                Blog. {{name}}
-            </a>
-        </div>
-        {{/each}}
-    </script>
-
-    <script id="blogs-archives-template" type="text/x-handlebars-template">
-        {{#each data}}
-        <div class="mb-2">
-            <a 
-                class="blog-link" 
-                href="#" 
-                onclick="getBlogs('blogs/archives/{{month}}-{{year}}')">
-                    <img src="/images/marker1.png" alt="" class="mr-1">
-                    {{monthString}}, {{year}}
-            </a>
-        </div>
-        {{/each}}
-    </script>
-
-    <script id="blogs-template" type="text/x-handlebars-template">
-        <h3 class="text-dark mb-4">Blog</h3>
-        {{#each data.data}}
-        <div class="row mb-5">
-            <div class="col">
-                <h4>{{name}}</h4>
-                <div class="mb-3">by Super User in 
-                    <a href="#" 
-                    class="blog-link-2" 
-                    onclick="getBlogs('categories/{{category.id}}')">
-                    Blog. {{category.name}}</a> 
-                    on {{date}} Hits: 208 
-                    <a 
-                        href="#" 
-                        class="blog-link-2" 
-                        onclick="getBlogDetail('{{id}}')">
-                        Comments ({{comments.length}})</a>
-                </div>
-                <div class="text-justify">
-                    <img class="image-rounded float-left mr-3" src="{{thumbpath}}" alt="">
-                    <div>
-                        {{summary}}
-                    </div>
-                    <a 
-                        href="#" 
-                        onclick="getBlogDetail('{{id}}')" 
-                        class="readmore mt-3" 
-                        style="display: block;">Read more</a>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-
-        <div id="blogs-pagination">
-
-        </div>
-    </script>
-
-    
-    <script id="blogs-readmore-template" type="text/x-handlebars-template">
-        <h3 class="text-dark mb-4">Blog</h3>
-        <scr{{!}}ipt type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f631587ff92a41c"></scr{{!}}ipt>
-        {{#each data}}
-        <div class="row mb-3">
-            <div class="col">
-                <h4>{{name}}</h4>
-                <div class="mb-3">by {{author}} in <a href="#" class="blog-link-2">Blog. {{category.name}}</a> on {{date}} Hits: 208 <a href="#" class="blog-link-2">Comments ({{comments.length}})</a></div>
-                <div class="text-justify">
-                    <img src="{{thumbpath}}" class="image-rounded float-left mr-3 mb-3" alt="">
-                    {{{description}}}
-
-                    <div class="mr-5" style="display: inline-block;">
-                        <a href="https://plus.google.com/share?url=http://web1-1988215.herokuapp.com/" target="_blank"
-                            title="Google Plus"><i class="fa fa-google-plus google-plus-btn"></i></a>
-                    </div>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div style="display: inline-block;" class="addthis_inline_share_toolbox"></div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="row mt-5">
-            <div class="col">
-                <form method="POST" id="frm-comment" onsubmit="event.preventDefault(); addComment()" data-blog-id={{id}}>
-                    <h5 class="pb-2">Leave your comments</h5>
-                    <h5>Post comment as a guest</h5>
-                    <div class="mb-2">
-                        <div class="comment_input_wrapper mr-3">
-                            <label for="comment_name">Name (Required):</label><br />
-                            <input class="inset-shadow-input-w100" type="text" name="name" id="name"
-                                placeholder="Your Name" required>
-                        </div>
-                        <div class="comment_input_wrapper">
-                            <label for="comment_email">Email (Required):</label><br />
-                            <input class="inset-shadow-input-w100" type="email" name="email" id="email"
-                                placeholder="Your Email" required>
-                        </div>
-                    </div>
-                    <textarea name="comment" id="comment" required></textarea>
-                    <scr{{!}}ipt>
-                        CKEDITOR.replace('comment');
-                    </scr{{!}}ipt>
-                    <div class="row mt-3">
-                        <div class="col-md-5">
-                            <input type="checkbox" name="agree" id="agree" value="false" required>
-                            Agree to <sub><a href="#" class="term_and_cond_link">terms and conditions</a></sub>
-                        </div>
-                        <div class="col-md-7 text-right">
-                            <button class="comment-submit-btn" type="submit">Submit comment</button>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="comment_container mt-4">
-                    <div class="comment_counter">
-                        COMMENTS ({{comments.length}})
-                    </div>
-                    <div class="comment_contain container" id="comments">
-                        {{#each comments}}
-                        <div class="comment">
-                            <div class="comment-info">
-                                by {{name}} <span class="comment-datetime">{{date}}</span>
-                            </div>
-                            <div class="text-justify comment-content">
-                                {{summary}}
-                            </div>
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        {{/each}}
-    </script>
-
-    <script id="blogs-pagination-template" type="text/x-handlebars-template">
-        {{#pagination currentPage pageCount size api}}
-        <div class="row">
-            <div class="col">
-
-                {{#unless startFromFirstPage}}
-                    <button class="pagination-btn">Prev</button>
-                {{/unless}}
-
-                {{#each pages}}
-                  {{#if isCurrent}}
-                    <button class="pagination-btn active">{{page}}</button>
-                  {{/if}}
-                  {{#unless isCurrent}}
-                    <button class="pagination-btn" onclick="getBlogs('{{api}}','{{page}}')">{{page}}</button>
-                  {{/unless}}
-                {{/each}}
-                {{#unless endAtLastPage}}
-                    <button class="pagination-btn">Next</button>
-                {{/unless}}
-            </div>
-        </div>
-        {{/pagination}}
-    </script>
 
     <script>
         $(document).ready(function(){
-            getData("blogs-categories","#blogs-categories","#blogs-categories-template");
-            getData("blogs-archives","#blogs-archives","#blogs-archives-template");
-            //getData("blogs","#blogs","#blogs-template");
+            getData("blogs-categories","#blogs-categories","blog-blogs-categories");
+            getData("blogs-archives","#blogs-archives","blog-blogs-archives");
             getBlogs("blogs");
         });
     </script>

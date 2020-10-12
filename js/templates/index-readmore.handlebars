@@ -1,0 +1,23 @@
+ <scr{{!}}ipt type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f631587ff92a41c"></scr{{!}}ipt>
+    <div class="container-fluid" id="small-banner"></div>
+    {{#each data}}
+    <div class="container py-5" id="readmore">
+        <h3 class="text-dark mb-5">{{name}}</h3>
+        <div class="row">
+            <div class="col">
+                {{{description}}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="mr-5" style="display: inline-block;">
+                    <a href="https://plus.google.com/share?url=http://web1-1988215.herokuapp.com/" target="_blank"
+                        title="Google Plus"><i class="fa fa-google-plus google-plus-btn"></i></a>
+                </div>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div style="display: inline-block;" class="addthis_inline_share_toolbox"></div>
+            </div>
+        </div>
+    </div>
+    {{/each}}

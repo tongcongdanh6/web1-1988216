@@ -159,71 +159,15 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script src="js/handlebars-v4.7.6.js"></script>
-
-
-    <script id="products-template" type="text/x-handlebars-template">
-        {{#each data}}
-        <div class="col text-center animate__animated animate__zoomIn animate__delay-{{@index}}s">
-            <img src={{thumbpath}} alt="">
-            <h4>{{name}}</h4>
-            <div class="pb-2">{{summary}}</div>
-            <a class="readmore" href="#" onclick='getData("products/{{id}}","#content","#readmore-template")'>Read more</a>
-        </div>
-        {{/each}}
-    </script>
-
-    <script id="news-template" type="text/x-handlebars-template">
-        {{#each data}}
-        <div class="col">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="date">{{date}}</div>
-                    <a class="readmore" href="#" onclick='getData("news/{{id}}","#content","#readmore-template")'>Read more</a>
-                </div>
-                <div class="col-sm-8">
-                    <h4>{{name}}</h4>
-                    <div>{{summary}}</div>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </script>
-
-    <script id="readmore-template" type="text/x-handlebars-template">
-        <scr{{!}}ipt type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f631587ff92a41c"></scr{{!}}ipt>
-        <div class="container-fluid" id="small-banner"></div>
-        {{#each data}}
-        <div class="container py-5" id="readmore">
-            <h3 class="text-dark mb-5">{{name}}</h3>
-            <div class="row">
-                <div class="col">
-                    {{{description}}}
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="mr-5" style="display: inline-block;">
-                        <a href="https://plus.google.com/share?url=http://web1-1988215.herokuapp.com/" target="_blank"
-                            title="Google Plus"><i class="fa fa-google-plus google-plus-btn"></i></a>
-                    </div>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div style="display: inline-block;" class="addthis_inline_share_toolbox"></div>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-
-    </script>
-
+    <script src="js/handlebars.runtime-v4.7.6.js"></script>
+    <script src="js/templates.js"></script>
 
     <script src="js/1988216.js"></script>
     <script>
         $(document).ready(function () {
             initializeWOW_Effect();
-            getData('products', '#products', '#products-template');
-            getData('news', '#news', '#news-template');
+            getData('products', '#products', 'index-products');
+            getData('news', '#news', 'index-news');
         });
     </script>
 

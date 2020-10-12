@@ -19,8 +19,9 @@ function getData(request, targetid, sourceid) {
                 data
             };
             let target = $(targetid);
-            let source = $(sourceid).html();
-            let template = Handlebars.compile(source);
+            let template = Handlebars.templates[sourceid];
+            // let source = $(sourceid).html();
+            // let template = Handlebars.compile(source);
             $(target).html(template(jsonData));
         }
     });
@@ -29,10 +30,10 @@ function getData(request, targetid, sourceid) {
 
 getGallery = (e, id) => {
     if(id) {
-        getData(`gallery/categories/${id}`, '#gallery', '#gallery-template');
+        getData(`gallery/categories/${id}`, '#gallery', 'menu-gallery');
     }
     else {
-        getData('gallery', '#gallery', '#gallery-template');
+        getData('gallery', '#gallery', 'menu-gallery');
     }
     $('#gallery-categories .nav-link').removeClass('disabled');
 
@@ -42,7 +43,7 @@ getGallery = (e, id) => {
 
 getDetailsOfGallery = (id) => {
     if(id) {
-        getData(`gallery/${id}`, '#content', '#gallery-details-template');
+        getData(`gallery/${id}`, '#content', 'menu-gallery-details');
     }
 }
 
@@ -56,8 +57,9 @@ getBlogs = (request, curPage = 1) => {
                 data
             };
             let target = $("#blogs");
-            let source = $("#blogs-template").html();
-            let template = Handlebars.compile(source);
+            let template = Handlebars.templates["blog-blogs"];
+            // let source = $("#blogs-template").html();
+            // let template = Handlebars.compile(source);
             $(target).html(template(jsonData));
 
             jsonData = {
@@ -68,8 +70,9 @@ getBlogs = (request, curPage = 1) => {
             }
 
             target = $("#blogs-pagination");
-            source = $("#blogs-pagination-template").html();
-            template = Handlebars.compile(source);
+            template = Handlebars.templates["blog-blogs-pagination"];
+            // source = $("#blogs-pagination-template").html();
+            // template = Handlebars.compile(source);
             $(target).html(template(jsonData));
         }
     });
@@ -78,7 +81,7 @@ getBlogs = (request, curPage = 1) => {
 getBlogDetail = (request) => {
     //console.log(request);
     if(request) {
-        getData(`blogs/${request}`, '#blogs', '#blogs-readmore-template');
+        getData(`blogs/${request}`, '#blogs', 'blog-blogs-readmore');
     }
 }
 
@@ -86,6 +89,7 @@ addComment = () => {
     // Validate Content of Comment
     if($("#cke_comment iframe").contents().find("body").text() == "")
     {
+        $("#errorModal .modal-title").html("Invalid Input");
         $("#errorContent").html("<div class='alert alert-danger'>Content of Comment cannot be empty string</div>");
         $("#errorModal").modal();
     }
@@ -118,6 +122,7 @@ addComment = () => {
                     },
                     data: formData,
                     success: function() {
+                        $("#errorModal .modal-title").html("Woo hoo ^^");
                         $("#errorContent").html("<div class='alert alert-success'>Your comment has been added</div>");
                         $("#errorModal").modal();
                         getBlogDetail(formData.blogId);
@@ -131,6 +136,7 @@ addComment = () => {
                             default:
                                 text = error;
                         }
+                        $("#errorModal .modal-title").html("Error!");
                         $("#errorContent").html(`<div class='alert alert-danger'>${text}</div>`);
                         $("#errorModal").modal();
                     }
@@ -138,7 +144,51 @@ addComment = () => {
             }
 
         });
-
-        
     }
+}
+
+sendEmail = () => {
+    let formData = $("#frm-contact").serialize();
+
+    $.ajax({
+        url: 'http://web1-api.herokuapp.com/users/authenticate',
+        dataType: 'json',
+        type: 'POST',
+        data: {
+            username: 'test',
+            password: '1c3cr3@m' 
+        },
+        success: function(result) {
+            console.log(result.token);
+            console.table(formData);
+            $.ajax({
+                url: 'http://web1-api.herokuapp.com/users/send',
+                dataType: 'json',
+                type: "POST",
+                headers: {
+                    "Authorization":`Bearer ${result.token}`
+                },
+                data: formData,
+                success: function() {
+                    $("#errorModal .modal-title").html("Woo hoo ^^");
+                    $("#errorContent").html("<div class='alert alert-success'>Your email has been sent</div>");
+                    $("#errorModal").modal();
+                },
+                error: function(xhr, status, error) {
+                    let text = "";
+                    switch(error) {
+                        case "Unauthorized":
+                            text = "You are not permit to comment this blog";
+                            break;
+                        default:
+                            text = error;
+                    }
+                    $("#errorModal .modal-title").html("Error!");
+                    $("#errorContent").html(`<div class='alert alert-danger'>${text}</div>`);
+                    $("#errorModal").modal();
+                }
+            });
+        }
+
+    });
 }

@@ -1,0 +1,12 @@
+<h3 class="text-white mb-4">Testimonials</h3>
+<div class="row ml-0 mb-5">
+{{#each data}}
+    
+        <div class="col">
+            <p>{{summary}}</p>
+            <div class="text-white">{{name}}</div>
+            <a class="readmore" href="mailto:{{email}}">{{email}}</a>
+        </div>
+    
+{{/each}}
+</div>

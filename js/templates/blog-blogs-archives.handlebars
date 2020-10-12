@@ -1,0 +1,11 @@
+{{#each data}}
+<div class="mb-2">
+    <a 
+        class="blog-link" 
+        href="#" 
+        onclick="getBlogs('blogs/archives/{{month}}-{{year}}')">
+            <img src="/images/marker1.png" alt="" class="mr-1">
+            {{monthString}}, {{year}}
+    </a>
+</div>
+{{/each}}

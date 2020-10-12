@@ -1,0 +1,22 @@
+{{#pagination currentPage pageCount size api}}
+<div class="row">
+    <div class="col">
+
+        {{#unless startFromFirstPage}}
+            <button class="pagination-btn">Prev</button>
+        {{/unless}}
+
+        {{#each pages}}
+            {{#if isCurrent}}
+            <button class="pagination-btn active">{{page}}</button>
+            {{/if}}
+            {{#unless isCurrent}}
+            <button class="pagination-btn" onclick="getBlogs('{{api}}','{{page}}')">{{page}}</button>
+            {{/unless}}
+        {{/each}}
+        {{#unless endAtLastPage}}
+            <button class="pagination-btn">Next</button>
+        {{/unless}}
+    </div>
+</div>
+{{/pagination}}

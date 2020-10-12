@@ -1,0 +1,8 @@
+{{#each data}}
+<div class="col text-center animate__animated animate__zoomIn animate__delay-{{@index}}s">
+    <img src={{thumbpath}} alt="">
+    <h4>{{name}}</h4>
+    <div class="pb-2">{{summary}}</div>
+    <a class="readmore" href="#" onclick='getData("products/{{id}}","#content","index-readmore")'>Read more</a>
+</div>
+{{/each}}
