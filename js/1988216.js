@@ -20,8 +20,6 @@ function getData(request, targetid, sourceid) {
             };
             let target = $(targetid);
             let template = Handlebars.templates[sourceid];
-            // let source = $(sourceid).html();
-            // let template = Handlebars.compile(source);
             $(target).html(template(jsonData));
         }
     });
@@ -58,8 +56,6 @@ getBlogs = (request, curPage = 1) => {
             };
             let target = $("#blogs");
             let template = Handlebars.templates["blog-blogs"];
-            // let source = $("#blogs-template").html();
-            // let template = Handlebars.compile(source);
             $(target).html(template(jsonData));
 
             jsonData = {
@@ -71,15 +67,12 @@ getBlogs = (request, curPage = 1) => {
 
             target = $("#blogs-pagination");
             template = Handlebars.templates["blog-blogs-pagination"];
-            // source = $("#blogs-pagination-template").html();
-            // template = Handlebars.compile(source);
             $(target).html(template(jsonData));
         }
     });
 }
 
 getBlogDetail = (request) => {
-    //console.log(request);
     if(request) {
         getData(`blogs/${request}`, '#blogs', 'blog-blogs-readmore');
     }
