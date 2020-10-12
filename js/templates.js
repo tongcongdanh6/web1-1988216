@@ -117,7 +117,7 @@ templates['about-visions'] = template({"1":function(container,depth0,helpers,par
 
   return "    <div class=\"row pb-4\">\r\n        <div class=\"col\">\r\n            <a href=\"#\" class=\"about-link\" onclick='getData(\"visions/"
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":5,"column":69},"end":{"line":5,"column":75}}}) : helper)))
-    + "\",\"#content\",\"#details-template\")'>\r\n                <img class=\"image-rounded float-left mr-3\" src=\""
+    + "\",\"#content\",\"about-details\")'>\r\n                <img class=\"image-rounded float-left mr-3\" src=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"thumbpath") || (depth0 != null ? lookupProperty(depth0,"thumbpath") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"thumbpath","hash":{},"data":data,"loc":{"start":{"line":6,"column":64},"end":{"line":6,"column":77}}}) : helper)))
     + "\" alt=\"\">\r\n                <h4 class=\"my-0 py-0\">\r\n                    "
     + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":8,"column":20},"end":{"line":8,"column":28}}}) : helper)))
