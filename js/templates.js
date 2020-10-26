@@ -314,7 +314,7 @@ templates['blog-blogs'] = template({"1":function(container,depth0,helpers,partia
 
   return "<div class=\"row mb-5\">\r\n    <div class=\"col\">\r\n        <h4>"
     + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":5,"column":12},"end":{"line":5,"column":20}}}) : helper)))
-    + "</h4>\r\n        <div class=\"mb-3\">by Super User in \r\n            <a href=\"#\" \r\n            class=\"blog-link-2\" \r\n            onclick=\"getBlogs('categories/"
+    + "</h4>\r\n        <div class=\"mb-3\">by Super User in \r\n            <a href=\"#\" \r\n            class=\"blog-link-2\" \r\n            onclick=\"getBlogs('blogs/categories/"
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"category") : depth0)) != null ? lookupProperty(stack1,"id") : stack1), depth0))
     + "')\">\r\n            Blog. "
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"category") : depth0)) != null ? lookupProperty(stack1,"name") : stack1), depth0))
